@@ -30,7 +30,7 @@ config t
 	 ip add 10._.100.2 255.255.255.0
 	 description VOICEVLAN
 
-!@@@LeafSwitchONLY
+!@@@LeafSwitchONLY Corebaba
 config t
    hostname COREbaba_
    enable secret pass
@@ -66,7 +66,7 @@ config t
 	 ip add 10._.100.4 255.255.255.0
 	 description VOICEVLAN
 	 
-!DHCP: DYNAMIC HOST CONFIGURATION PROTOCOL
+!DHCP: DYNAMIC HOST CONFIGURATION PROTOCOL - COREBABA
 !@@@LEAF SWITCH
 config t
 ip dhcp Excluded-add 10._.1.1 10._.1.100
@@ -96,7 +96,7 @@ ip dhcp pool VOICEVLAN
    option 150 ip 10._.100.8   
    END
 
-!!CREATING AND PLACING PORTS INSIDEAVLAN:
+!!CREATING AND PLACING PORTS INSIDEAVLAN: COREBABA
 config t
 vlan 10
    name WIFIVLAN
@@ -127,6 +127,8 @@ Int Fa 0/7
   switchport access vlan 100    
  end
 
+!!CAMERA - COREBABA
+Conf t
 ip dhcp pool CAMERA6
 host 10._.50.6 255.255.255.0
 client-identifier aaaa.bbbb.cccc
